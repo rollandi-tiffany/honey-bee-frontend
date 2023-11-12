@@ -3,7 +3,7 @@ import {useLoaderData} from "react-router-dom"
 import { Form } from "react-router-dom"
 
 const Index = (props) => {
-  const users = useLoaderData()
+  const sitters = useLoaderData()
   // For each post in the array render a Post component
   return <>
   <div style={{textAlign: "center"}}>
@@ -14,7 +14,7 @@ const Index = (props) => {
       <button>Create New Babysitting Inquiry</button>
     </Form>
   </div>
-  {users.map((post) => <Post post={post} key={post.id} />)}
+  {sitters.map((post) => <Post post={post} key={post.id} />)}
   </>
 };
 

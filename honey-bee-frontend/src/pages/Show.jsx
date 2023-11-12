@@ -21,7 +21,7 @@ const Show = () => {
           <input
             type="text"
             name="subject"
-            placeholder="write family's name"
+            placeholder="write family name"
             defaultValue={post.subject}
           />
           <input

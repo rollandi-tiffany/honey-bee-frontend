@@ -5,17 +5,19 @@ const URL = "https://honey-bee-backend.onrender.com/"
 export const createAction = async ({request}) => {
     const formData = await request.formData()
 
-    const newUser = {
-        subject: formData.get("subject"),
-        details: formData.get("details")
+    const newSitter = {
+        family_name: formData.get("family_name"),
+        details: formData.get("details"),
+        children_age: formData.get("children_age"),
+        hourly_wage: formData.get("hourly_wage")
     }
 
-    await fetch(URL + "/users/", {
+    await fetch(URL + "/sitters/", {
         method: "post",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(newUser)
+        body: JSON.stringify(newSitter)
     })
     return redirect("/")
 }
@@ -23,17 +25,19 @@ export const createAction = async ({request}) => {
 export const updateAction = async ({request, params}) => {
     const formData = await request.formData()
     const id = params.id
-    const updatedUser = {
-        subject: formData.get("subject"),
-        details: formData.get("details")
+    const updatedSitter = {
+        family_name: formData.get("family_name"),
+        details: formData.get("details"),
+        children_age: formData.get("children_age"),
+        hourly_wage: formData.get("hourly_wage")
     }
 
-    await fetch(URL + `/users/${id}/`, {
+    await fetch(URL + `/sitters/${id}/`, {
         method: "put",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(updatedUser)
+        body: JSON.stringify(updatedSitter)
     })
     return redirect(`/post/${id}`)
 }
@@ -41,7 +45,7 @@ export const updateAction = async ({request, params}) => {
 export const deleteAction = async ({params}) => {
     const id = params.id
 
-    await fetch(URL + `/users/${id}/`, {
+    await fetch(URL + `/sitters/${id}/`, {
         method: "delete",
     })
     return redirect("/")
