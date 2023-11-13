@@ -7,7 +7,7 @@ const Post = ({ post }) => {
   //////////////////
   const div = {
     textAlign: "center",
-    border: "3px solid",
+    border: "5px solid",
     margin: "10px auto",
     width: "80%",
   };

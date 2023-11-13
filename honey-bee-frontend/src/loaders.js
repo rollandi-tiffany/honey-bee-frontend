@@ -1,4 +1,4 @@
-const URL = "https://honey-bee-backend.onrender.com/"
+const URL = "https://honeybee-sitters-backend.onrender.com"
 
 //indexLoader => get all todos for index route
 export const indexLoader = async () => {

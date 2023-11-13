@@ -1,6 +1,6 @@
 import { redirect } from "react-router-dom";
 
-const URL = "https://honey-bee-backend.onrender.com/"
+const URL = "https://honeybee-sitters-backend.onrender.com"
 
 export const createAction = async ({request}) => {
     const formData = await request.formData()
@@ -50,3 +50,4 @@ export const deleteAction = async ({params}) => {
     })
     return redirect("/")
 }
+

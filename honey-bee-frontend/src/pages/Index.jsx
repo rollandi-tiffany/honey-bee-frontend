@@ -6,12 +6,12 @@ const Index = (props) => {
   const sitters = useLoaderData()
   // For each post in the array render a Post component
   return <>
-  <div style={{textAlign: "center"}}>
-    <h2>Create Babysitting Details</h2>
-    <Form action="text" method="post">
-      <input type="text" name="subject" placeholder="write family's name"/>
-      <input type="text" name="details" placeholder="write hours and wage here"/>
-      <button>Create New Babysitting Inquiry</button>
+  <div style={{textAlign: "center", backgroundColor: "yellow"}}>
+    <h2 style={{color: "orange", backgroundColor: "yellow"}}>Babysitting Schedule</h2>
+    <Form action="sitters" method="post">
+      <input type="text" name="subject" placeholder="Enter Family Name"/>
+      <input type="text" name="details" placeholder="Enter Date and Hours"/>
+      <button style={{color: "orange"}}>Create New Babysitting Inquiry</button>
     </Form>
   </div>
   {sitters.map((post) => <Post post={post} key={post.id} />)}
