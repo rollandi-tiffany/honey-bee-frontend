@@ -9,6 +9,10 @@ const Show = () => {
     border: "1px solid orange",
     width: "80%",
     margin: "30px auto",
+    backgroundColor: "orange",
+    color: "black",
+    
+    
     
   };
 
@@ -18,9 +22,9 @@ const Show = () => {
       <h2>{post.details}</h2>
       <h2>{post.children_age}</h2>
       <h2>{post.hourly_wage}</h2>
-      <div style={{ textAlign: "center" }}>
-        <h2>Create Babysitting Schedule</h2>
-        <Form action={`/update/${post.id}`} method="post">
+      <div style={{ textAlign: "center", backgroundColor:"orange" }}>
+        <h2 style={{backgroundColor:"orange", color: "black"}}>Babysitting Time!</h2>
+        <Form>
           <input
             type="text"
             name="family_name"
@@ -45,7 +49,9 @@ const Show = () => {
           placeholder="Enter Hourly Wage"
           defaultValue={post.hourly_wage}
           />
-          <button>Update Schedule</button>
+        </Form>
+        <Form action={`/update/${post.id}`}method="put">
+        <button>Update Schedule</button>
         </Form>
         <Form action={`/delete/${post.id}`} method="post">
           <button>Delete Babysitting Inquiry</button>

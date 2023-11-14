@@ -12,8 +12,8 @@ const Post = ({ post }) => {
     borderRadius: "10px",
     margin: "10px auto",
     width: "50%",
-    backgroundColor: "orange"
-   
+    backgroundColor: "orange",
+    
    
     
   };
