@@ -6,9 +6,10 @@ const Show = () => {
 
   const div = {
     textAlign: "center",
-    border: "3px solid orange",
+    border: "1px solid orange",
     width: "80%",
     margin: "30px auto",
+    
   };
 
   return (

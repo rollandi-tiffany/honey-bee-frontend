@@ -30,7 +30,7 @@ This is a full-stack app built using Javascript and React for the frontend and P
 ### Approach Taken
 
 ### Installation
-Users will be able to go to this site (https://honeybee-sitters-backend.onrender.com) and begin to organize their babysitting schedule. 
+Users will be able to go to this site (https://honey-bee-frontend.onrender.com/) and begin to organize their babysitting schedule. 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Wireframes
