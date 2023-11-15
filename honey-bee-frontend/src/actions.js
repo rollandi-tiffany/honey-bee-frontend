@@ -12,19 +12,20 @@ export const createAction = async ({request}) => {
         hourly_wage: formData.get("hourly_wage")
     }
 
-    await fetch(URL + "/sitters/", {
+    return await fetch(URL + "/sitters", {
         method: "post",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(newSitter)
     })
-    return redirect("/")
+    
 }
 
 export const updateAction = async ({request, params}) => {
     const formData = await request.formData()
     const id = params.id
+    
     const updatedSitter = {
         family_name: formData.get("family_name"),
         details: formData.get("details"),
@@ -39,7 +40,7 @@ export const updateAction = async ({request, params}) => {
         },
         body: JSON.stringify(updatedSitter)
     })
-    return redirect(`/post/${id}`)
+    return true;
 }
 
 export const deleteAction = async ({params}) => {
