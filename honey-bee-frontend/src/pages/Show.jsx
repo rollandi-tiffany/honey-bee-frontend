@@ -4,7 +4,7 @@ import { useState } from "react";
 const URL = "https://honeybee-sitters-backend.onrender.com"
 
 const Show = () => {
-  const data = useLoaderData();
+const data = useLoaderData();
 const [post, setPost] = useState(data)
 const handleChange = (e)=>{
   setPost(p=>({...p, [e.target.name]: e.target.value}))
@@ -27,7 +27,7 @@ const handleSubmit = async(e) =>{
   const updatedSitter = {
     family_name: post["family_name"],
     details: post["details"],
-  children_age: post["children_age"],
+    children_age: post["children_age"],
     hourly_wage: post["hourly_wage"]
 }
 
@@ -73,8 +73,6 @@ setPost(p=>({...p, ...updatedSitter}))
           placeholder="Enter Hourly Wage"
           defaultValue={post.hourly_wage}
           />
-       
-       
         <button type="submit">Update Schedule</button>
         </form>
         <Form action={`/delete/${post.id}`} method="post">

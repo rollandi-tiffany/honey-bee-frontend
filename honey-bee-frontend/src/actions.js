@@ -4,6 +4,7 @@ const URL = "https://honeybee-sitters-backend.onrender.com"
 
 export const createAction = async ({request}) => {
     const formData = await request.formData()
+   
 
     const newSitter = {
         family_name: formData.get("family_name"),
@@ -11,14 +12,17 @@ export const createAction = async ({request}) => {
         children_age: formData.get("children_age"),
         hourly_wage: formData.get("hourly_wage")
     }
-
-    return await fetch(URL + "/sitters", {
+console.log(newSitter)
+    let res = await fetch(URL + "/sitters/", {
         method: "post",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(newSitter)
+       
     })
+    console.log(await res.json())
+    return redirect("/")
     
 }
 
