@@ -56,3 +56,40 @@ export const deleteAction = async ({params}) => {
     return redirect("/")
 }
 
+export const createUserAction = async ({ request }) => {
+    const formData = await request.formData();
+  
+    const user = {
+      username: formData.get('username'),
+      password: formData.get('password'),
+    };
+  
+    await fetch(URL + '/user', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+    return redirect('/login');
+};
+
+export const updateUser = async ({ params, request }) => {
+  const formData = await request.formData();
+
+  const user = {
+    username: formData.get('username'),
+    password: formData.get('password'),
+  };
+
+  await fetch(URL + '/user/' + params.id, {
+    method: 'put',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user),
+  });
+
+  // Redirect to the home page
+  return redirect('/');
+};

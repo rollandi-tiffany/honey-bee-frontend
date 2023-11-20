@@ -30,7 +30,7 @@ export const usersLoader = async () => {
   };
 
 export const usersShowLoader = async ({params}) => {
-    const res = await fetch(URL + `/${params.id}/`)
+    const res = await fetch(URL + `/`)
     const user = await res.json()
     console.log('User Data: ', user);
     return user

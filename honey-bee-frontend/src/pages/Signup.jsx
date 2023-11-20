@@ -37,7 +37,7 @@ const Signup = (props) => {
       const data = await response.json();
 
       if (data) {
-        navigate('/login');
+        navigate('/');
       } else {
         alert("Invalid, try again.");
       }
@@ -75,7 +75,7 @@ const Signup = (props) => {
         <button type="submit">Signup</button>
       </Form>
       <br/>
-      <Link to="/login" className="link-btn">Already have an account? Login here.</Link>
+      <Link to="/" className="link-btn">Already have an account? Login here.</Link>
     </div>
   );
   };

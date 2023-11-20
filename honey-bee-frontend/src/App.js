@@ -1,5 +1,5 @@
-import {Link, Outlet, Router, Route, Routes} from "react-router-dom"
-import Login from "./pages/Login";
+import { Outlet} from "react-router-dom"
+
 
 
 function App() {
@@ -12,9 +12,7 @@ function App() {
   
     <div className="App" style={appStyle}>
       <Outlet/>
-        <Routes>
-          <Route path="/" element={<Login/>}/>
-        </Routes>
+     
       
     </div>
  

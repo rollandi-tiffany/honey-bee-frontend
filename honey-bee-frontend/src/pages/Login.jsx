@@ -28,19 +28,24 @@ const Login = (props) =>{
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData),
+            
         });
+        console.log(formData)
         const data =await response.json();
-        if(data === "Logged in"){
+        if(data.message === "Logged in successfully."){
             const formUser = formData.username;
             const foundUser = user.find((e) => e.username === formUser);
+            //console.log(data.message)
             localStorage.setItem("id", foundUser._id);
-            navigate('/sitters',{ state: { user: foundUser } });
+            navigate('/',{ state: { user: foundUser } });
         }else{
             alert("Invalid, try again.");
             setFormData({
                 ...formData,
                 password: ''
+                
             })
+            
         }
     }catch(error){
         console.log(error);

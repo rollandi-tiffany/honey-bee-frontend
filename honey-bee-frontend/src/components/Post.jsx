@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 //destructure the post from props
 const Post = ({ post }) => {
@@ -14,8 +15,12 @@ const Post = ({ post }) => {
     margin: "10px auto",
     width: "50%",
     backgroundColor: "orange",
-    
    
+
+   }
+   const navigate = useNavigate();
+   const handleLogout = ()=>{
+    navigate('/login');
     
   };
   return (
@@ -26,7 +31,7 @@ const Post = ({ post }) => {
       <h2>{post.details}</h2>
       <h2>{post.children_age}</h2>
       <h2>{post.hourly_wage}</h2>
-      
+      <Link onClick={handleLogout}>Logout</Link>
     </div>
   );
 };
