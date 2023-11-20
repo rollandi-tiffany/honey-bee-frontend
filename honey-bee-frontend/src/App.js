@@ -1,4 +1,6 @@
-import {Link, Outlet} from "react-router-dom"
+import {Link, Outlet, Router, Route, Routes} from "react-router-dom"
+import Login from "./pages/Login";
+
 
 function App() {
   const appStyle = {
@@ -7,9 +9,16 @@ function App() {
     backgroundAttachment: 'fixed',
   }
   return (
+  
     <div className="App" style={appStyle}>
       <Outlet/>
+        <Routes>
+          <Route path="/" element={<Login/>}/>
+        </Routes>
+      
     </div>
+ 
+  
   );
 }
 
