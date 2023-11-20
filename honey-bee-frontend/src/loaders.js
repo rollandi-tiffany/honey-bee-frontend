@@ -13,3 +13,25 @@ export const showLoader = async ({params}) => {
     const sitter = await response.json()
     return sitter
 }
+
+export const usersLoader = async () => {
+    try {
+      const res = await fetch(URL + "/");
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      const user = await res.json();
+      console.log(user);
+      return user;
+    } catch (error) {
+      console.error('Error fetching user:', error.message);
+      throw error;
+    }
+  };
+
+export const usersShowLoader = async ({params}) => {
+    const res = await fetch(URL + `/${params.id}/`)
+    const user = await res.json()
+    console.log('User Data: ', user);
+    return user
+}

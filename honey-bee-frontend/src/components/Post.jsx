@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 //destructure the post from props
 const Post = ({ post }) => {
+  
   //////////////////
   // Style Objects
   //////////////////
@@ -25,6 +26,7 @@ const Post = ({ post }) => {
       <h2>{post.details}</h2>
       <h2>{post.children_age}</h2>
       <h2>{post.hourly_wage}</h2>
+      
     </div>
   );
 };
