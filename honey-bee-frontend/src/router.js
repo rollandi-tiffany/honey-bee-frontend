@@ -1,12 +1,12 @@
 import {createBrowserRouter, createRoutesFromElements, Route} from "react-router-dom"
 import App from "./App"
-import { indexLoader, showLoader, usersLoader, usersShowLoader } from "./loaders"
+import { indexLoader, showLoader, usersLoader } from "./loaders"
 import Index from "./pages/Index"
 import Show from "./pages/Show"
 import { createAction, updateAction, deleteAction } from "./actions"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
-import Home from "./pages/Home"
+//import Home from "./pages/Home"
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
