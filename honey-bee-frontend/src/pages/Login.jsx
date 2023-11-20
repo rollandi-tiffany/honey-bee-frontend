@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Link, useLoaderData, useNavigate } from "react-router-dom";
 
+const URL = "https://honeybee-sitters-backend.onrender.com"
 const Login = (props) =>{
     const [formData, setFormData] = useState({
         username: '',
@@ -21,7 +22,7 @@ const Login = (props) =>{
   const handleLogin = async (e) => {
     e.preventDefault();
     try{
-        const response = await fetch(URL + `/`,{
+        const response = await fetch(URL + `/sitters`,{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json',
@@ -33,7 +34,7 @@ const Login = (props) =>{
             const formUser = formData.username;
             const foundUser = user.find((e) => e.username === formUser);
             localStorage.setItem("id", foundUser._id);
-            navigate('/',{ state: { user: foundUser } });
+            navigate('/sitters',{ state: { user: foundUser } });
         }else{
             alert("Invalid, try again.");
             setFormData({

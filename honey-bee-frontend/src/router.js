@@ -11,7 +11,6 @@ import Home from "./pages/Home"
 const router = createBrowserRouter(createRoutesFromElements(
     <>
         <Route path="/" element={<App/>}>
-            <Route path="/" element={<Home/>}/>
             <Route path="" element={<Index/>} loader={indexLoader}/>
             <Route path="post/:id" element={<Show/>} loader={showLoader}/>
             <Route path="sitters" action={createAction}/>

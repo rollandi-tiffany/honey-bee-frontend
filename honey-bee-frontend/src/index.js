@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import "milligram"
-import {RouterProvider, BrowserRouter} from "react-router-dom"
+import App from './App';
+import {RouterProvider, BrowserRouter, Router} from "react-router-dom"
 import router from './router';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -16,7 +16,7 @@ export const showLoader = async ({params}) => {
 
 export const usersLoader = async () => {
     try {
-      const res = await fetch(URL + "/");
+      const res = await fetch(URL + "/sitters");
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }

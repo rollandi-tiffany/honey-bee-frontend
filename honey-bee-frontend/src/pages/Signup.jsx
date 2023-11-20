@@ -25,7 +25,7 @@ const Signup = (props) => {
     e.preventDefault();
 
     try {
-        const response = await fetch(URL + `/`,{
+        const response = await fetch(URL + `/sitters`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
